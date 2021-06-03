@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>User Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to your Brand admin page</h1>
+    <p>Generate some discount codes by entering the amount</p>
+    <form method="post">
+        <input type="number" name="num"/>
+        <input type="submit">
+    </form>
+    <p>{{ error }}</p>
+    <table style="width:100%">
+        <tr>
+            <th>Code</th>
+            <th>UserId</th> 
+        </tr>
+        {% for key, value in discount.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

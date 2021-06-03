@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>User Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>User ID: {{ id }}</h1>
+    <form method="post">
+        <button name="getcode" type="submit">Get code</button>
+    </form>
+    <p>{{ error }}</p>
+    {%- for code in discount %}
+    <p>{{ code -}}</p>
+    {% endfor %}
+
+</body>
+</html>
